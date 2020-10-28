@@ -19,7 +19,7 @@ Repository developed in the module "Requesting data from a cryptocurrency API" o
 ## :pushpin: Prerequisites
 -   [Node.js](https://nodejs.org/en/)
 -   [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/pt-BR/docs/install)
-- [API key CoinMarketCap](https://pro.coinmarketcap.com) -- To run this project, you need a user account and create your own api key to be able to request cryptocurrency quotes provided by this platform.
+- [API key CoinMarketCap](https://pro.coinmarketcap.com) — To run this project, you need a user account and create your own api key to be able to request cryptocurrency quotes provided by this platform.
 
 ## :computer: Getting started
 
