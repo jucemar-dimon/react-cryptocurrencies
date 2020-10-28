@@ -31,6 +31,6 @@ Repository developed in the module "Requesting data from a cryptocurrency API" o
 ## :memo: License
 This project is under the MIT license. See the [LICENSE](https://github.com/jucemar/react-cryptocurrencies/blob/master/LICENSE) for more information.
 
-----------
+--
 
 Made with by Jucemar Dimon  👋  [Get in touch!](https://www.linkedin.com/in/jucemar-dimon/)
