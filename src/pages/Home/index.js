@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Logo from "../../assets/images/coin.png";
+import Api from "../../services";
 import "rbx/index.css";
 import {
   Container,
@@ -18,21 +19,23 @@ import {
 const Home = () => {
   const [coins, setCoins] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://pro-api.coinmarketcap.com/v1/cryptocurrency/map?CMC_PRO_API_KEY=" +
-        process.env.REACT_APP_APY_KEY_COIN_MARKET_CAP
-    )
+    Api.get("/listings/latest", {
+      params: {
+        sort: "price",
+        limit: "10",
+      },
+    })
       .then((response) => {
-        if (!response.ok)
+        if (!response.status) {
           throw new Error(
             "Erro ao executar a requisição, status " + response.status
           );
-        return response.json();
+        } else {
+          console.log(response.data.data);
+          setCoins(Object.values(response.data.data.slice(0, 100)));
+        }
       })
-      .then((api) => {
-        console.log(api.data);
-        setCoins(Object.values(api.data.slice(0, 100)));
-      })
+
       .catch((error) => {
         console.log(error);
       });
@@ -76,7 +79,7 @@ const Home = () => {
                     {coin.symbol}
                   </Title>
                   <Title as="p" subtitle size={6}>
-                    {coin.rank}
+                    {coin.quote.USD.price}
                   </Title>
                 </Box>
               </Column>
